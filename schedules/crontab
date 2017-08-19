@@ -1,0 +1,4 @@
+#Who got the remedy? John Kennedy!
+0 22 * * 1-4 /opt/radio/record.sh radiox 10800 xposure &>> /var/log/radio/debug.log
+#Keep last 30 days worth of recordings
+0 21 * * * find /opt/radio/data/ -type f -mtime +30 -name '*.aac' -execdir rm -- {} \;
